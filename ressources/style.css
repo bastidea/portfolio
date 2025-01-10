@@ -27,7 +27,34 @@ html {
 }
 .modal-content {
     max-height: 80vh;
+    width: 60%;
     overflow-y: auto;
+}
+
+
+/*#modal-image {
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}*/
+
+#modal-description p {
+    text-indent: 30px;
+    margin-bottom: 1em;
+}
+
+#modal-description ul, #modal-description ol {
+    margin-left: 30px;
+    margin-bottom: 1em;
+}
+
+#modal-description li {
+    margin-bottom: 0.5em;
+}
+
+#modal-description h2, #modal-description h3 {
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
 }
 
 ::-webkit-scrollbar {
