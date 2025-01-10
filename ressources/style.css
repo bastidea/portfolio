@@ -31,6 +31,14 @@ html {
     overflow-y: auto;
 }
 
+  
+  @media screen and (max-width: 768px) {
+    .modal {
+      width: 90%; /* Largeur adaptée aux téléphones */
+      max-height: 90%; /* Hauteur adaptée */
+    }
+  }
+
 
 /*#modal-image {
     width: auto;
