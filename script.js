@@ -1,28 +1,29 @@
-document.getElementById('copy-email').addEventListener('click', function () {
-    const email = "alexisbastide23@gmail.com";
-    navigator.clipboard.writeText(email).then(() => {
-        const button = document.getElementById('copy-email');
-        button.innerHTML = 
-            `<span class="icon">
+document.getElementById("copy-email").addEventListener("click", function () {
+  const email = "alexisbastide23@gmail.com";
+  navigator.clipboard
+    .writeText(email)
+    .then(() => {
+      const button = document.getElementById("copy-email");
+      button.innerHTML = `<span class="icon">
                 <i class="fas fa-envelope"></i>
             </span>
             <span>Email copié !</span>`;
-        setTimeout(function() {
-            button.innerHTML = 
-                `<span class="icon">
+      setTimeout(function () {
+        button.innerHTML = `<span class="icon">
                     <i class="fas fa-envelope"></i>
                 </span>
                 <span>Email</span>`;
-        }, 2000);
-    }).catch(err => {
-        console.error("Une erreur s'est produite lors de la copie :", err);
+      }, 2000);
+    })
+    .catch((err) => {
+      console.error("Une erreur s'est produite lors de la copie :", err);
     });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    const projects = {
-        1: {
-            description: `
+document.addEventListener("DOMContentLoaded", () => {
+  const projects = {
+    1: {
+      description: `
                 <h2 class="title is-2">CapyNote : Une solution pour la gestion des parcours étudiants</h2>
 
                 <h3 class="title is-3">Contexte du projet</h3>
@@ -104,10 +105,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     Ce projet m’a permis de mettre en pratique de nombreuses compétences informatiques et humaines. Il constitue une base solide pour relever de futurs défis techniques, tout en continuant à perfectionner mes aptitudes à collaborer et à mener des projets dans des environnements professionnels.
                 </p>
             `,
-            image: 'ressources/images/capyNote.png'
-        },
-        2: {
-            description: `
+      image: "ressources/images/capyNote.png",
+    },
+    2: {
+      description: `
                 <h2 class="title is-2">Trains : Adaptation d'un jeu de société japonais en Java</h2>
                 <h3 class="title is-3">Contexte du projet</h3>
                 <p class="content">
@@ -184,10 +185,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     Elle m’a préparé à gérer des projets similaires dans un cadre professionnel.
                 </p>
             `,
-            image: 'ressources/images/train.png'
-        },
-        3: {
-            description: `
+      image: "ressources/images/train.png",
+    },
+    3: {
+      description: `
                 <h2 class="title is-2">BDD Plateforme Musicale : Création d'une base de données avec Oracle SQL</h2>
                 <h3 class="title is-3">Contexte du projet</h3>
                 <p class="content">
@@ -270,25 +271,26 @@ document.addEventListener('DOMContentLoaded', () => {
                     dans des environnements professionnels nécessitant des bases de données complexes.
                 </p>
             `,
-            image: 'ressources/images/musique.png'
-        }
-    };
-    document.querySelectorAll('.clickable').forEach(projectCard => {
-        projectCard.addEventListener('click', (event) => {
-            const projectId = event.currentTarget.getAttribute('data-project');
-            const project = projects[projectId];
-            document.getElementById('modal-description').innerHTML = project.description;
-            document.getElementById('modal-image').src = project.image;
+      image: "ressources/images/musique.png",
+    },
+  };
+  document.querySelectorAll(".clickable").forEach((projectCard) => {
+    projectCard.addEventListener("click", (event) => {
+      const projectId = event.currentTarget.getAttribute("data-project");
+      const project = projects[projectId];
+      document.getElementById("modal-description").innerHTML =
+        project.description;
+      document.getElementById("modal-image").src = project.image;
 
-            document.getElementById('modal1').classList.add('is-active');
-        });
+      document.getElementById("modal1").classList.add("is-active");
     });
+  });
 
-    document.querySelector('.modal-close').addEventListener('click', () => {
-        document.getElementById('modal1').classList.remove('is-active');
-    });
-    
-    document.querySelector('.modal-background').addEventListener('click', () => {
-        document.getElementById('modal1').classList.remove('is-active');
-    });
+  document.querySelector(".modal-close").addEventListener("click", () => {
+    document.getElementById("modal1").classList.remove("is-active");
+  });
+
+  document.querySelector(".modal-background").addEventListener("click", () => {
+    document.getElementById("modal1").classList.remove("is-active");
+  });
 });
